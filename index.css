@@ -16,6 +16,10 @@
     font-display: swap;
 }
 
+img {
+    width: 100%;
+}
+
 body {
     position: relative;
     font-family: Poppins;
@@ -38,7 +42,7 @@ body {
         animation: colorear 2s ease-out forwards;
     }
 
-    .background-video {
+    /* .background-video {
         position: fixed;
         width: 100vw;
         height: 100dvh;
@@ -46,11 +50,10 @@ body {
         object-fit: cover;
         pointer-events: none;
         object-position: center;
-    }
+    } */
 
     h1,h2,h3,h4,h5,h6 {
         position: relative;
-        font-size: 2.5rem;
         font-weight: bold;
         color: var(--blanco);
         font-family: segoescript;
@@ -61,7 +64,6 @@ body {
         backdrop-filter: blur(5px);
         text-shadow: 0px 0px 30px rgb(0, 0, 0, .5);
         text-align: center;
-        /* box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3); */
         box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.2),
             -15px -15px 15px rgba(255, 255, 255, 0.2);
     }
@@ -71,13 +73,18 @@ body {
     }
 
     header {
-        display: flex;
+        position: fixed;
+        display: none;
         height: 100%;
         background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
         width: 200px;
         padding: 1em;
+        z-index: 10;
+        top: 0;
+        left: 0;
 
         nav {
+            display: none;
             height: 100%;
 
             ul {
@@ -118,6 +125,7 @@ body {
         overflow-y: scroll;
 
         main {
+
             section {
                 min-height: 100dvh;
                 display: flex;
@@ -125,11 +133,7 @@ body {
                 justify-content: center;
                 align-items: center;
                 gap: 2em;
-                padding: 2em;
-    
-                &:first-child img {
-                    width: 30%;
-                }
+                padding: 1em;
             }
     
             /* Seccion de nosotros */
@@ -137,10 +141,10 @@ body {
             .seccion-nosotros {
                 .contenedor {
                     display: flex;
+                    flex-direction: column;
+                    flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    width: 1000px;
-                    height: 200px;
                 }
                 .contenedor-general {
                     display: flex;
@@ -162,18 +166,12 @@ body {
                     justify-content: space-evenly;
                     align-items: center;
                     gap: 1em;
-                    height: 300px;
-    
-                    img {
-                        height: 100%;
-                    }
     
                     .contenedor-general-perfil {
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
-                        height: 100%;
     
                         img {
                             width: 200px;
@@ -186,16 +184,10 @@ body {
                             gap: 1em;
                             padding: 1em;
                             border-radius: 2em;
-                            width: 100%;
                 
                             p {
-                                width: 100%;
                                 color: white;
                                 text-shadow: 0px 0px 10px black;
-                            }
-                
-                            .parrafo {
-                                height: 100%;
                             }
                 
                             .nombre {
@@ -222,8 +214,6 @@ body {
                     display: flex;
                     flex-direction: column;
                     gap: 1em;
-                    width: 50%;
-                    height: 100%;
                     padding: 2em;
                     backdrop-filter: blur(5px);
                     box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.2),
@@ -242,12 +232,14 @@ body {
     
                     .div-descripciones {
                         display: flex;
+                        flex-direction: column;
                         gap: 1em;
                         justify-content: center;
                         align-items: center;
     
                         .div-descripcion {
                             display: flex;
+                            flex-direction: column;
                             justify-content: center;
                             align-items: center;
                             width: 150px;
@@ -263,13 +255,18 @@ body {
                 }
     
                 .div-lista-servicios {
-                    display: flex;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
                     justify-content: space-evenly;
                     background-color: rgba(0, 0, 0, 0.5);
                     padding-block: 10px;
+                    width: 100%;
                     max-width: 800px;
                     border-radius: 20px;
                     overflow-x: auto;
+                    gap: 1em;
+                    padding: 1em;
+                    justify-items: center;
     
                     .div-imagen {
                         width: 100px;
@@ -282,10 +279,6 @@ body {
                         backdrop-filter: blur(0px);
                         z-index: 1;
                         transition: all .4s;
-    
-                        img {
-                            width: 100%;
-                        }
                     }
     
                     .div-imagen:hover {
@@ -309,7 +302,7 @@ body {
                 
                 .contenedor-general-clientes {
                     display: grid;
-                    grid-template-columns: repeat(4, 1fr);
+                    grid-template-columns: repeat(1, 1fr);
                     gap: 2em;
 
                     .contenedor-cliente {
@@ -323,10 +316,6 @@ body {
                         align-items: center;
                         cursor: pointer;
 
-                        img {
-                            width: 80%;
-                        }
-
                         span {
                             text-shadow: 0px 0px 10px white;
                             font-size: 1.2rem;
@@ -339,13 +328,11 @@ body {
 
             /* Seccion del blog */
             .seccion-blog {
-                height: 100dvh;
-                
+
                 .contenedor-general-blog {
                     display: grid;
-                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-columns: repeat(1, 1fr);
                     gap: 2em;
-                    height: 100%;
 
                     .contenedor-blog {
                         padding: 2em;
@@ -357,10 +344,6 @@ body {
                         justify-content: center;
                         align-items: center;
                         cursor: pointer;
-
-                        img {
-                            width: 80%;
-                        }
 
                         span {
                             text-shadow: 0px 0px 10px white;
@@ -381,16 +364,15 @@ body {
                     justify-content: center;
                     align-items: center;
                     gap: 1em;
-                    width: 400px;
                     backdrop-filter: blur(5px);
                     box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.2), -15px -15px 15px rgba(255, 255, 255, 0.2);
                     border-radius: 2em;
                     padding: 2em;
+                    width: 100%;
 
                     .div-input {
                         display: flex;
                         flex-direction: column;
-                        width: 100%;
 
                         textarea {
                             resize: vertical;
@@ -405,7 +387,6 @@ body {
 
                     input,
                     textarea {
-                        width: 100%;
                         border: none;
                         outline: none;
                         padding: .6em;
@@ -423,10 +404,6 @@ body {
 
             }
         }
-
-        footer {
-
-        }
     }
 }
 @keyframes colorear {
@@ -439,5 +416,30 @@ body {
         filter: brightness(1) blur(0);
         scale: 1;
         transform: rotateZ(0deg); 
+    }
+}
+
+/* Responsive */
+@media screen and (min-width: 768px) {
+    body {
+        .contenedor-root {
+            main {
+                section {
+                    &:first-child img {
+                        width: 50%;
+                    }
+                }
+
+                .seccion-nosotros {
+                    .contenedor-perfiles {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        .contenedor-general-perfil {
+                            flex-direction: column;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
