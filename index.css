@@ -68,6 +68,13 @@ body {
             -15px -15px 15px rgba(255, 255, 255, 0.2);
     }
 
+    h1 {
+        font-size: 1.9rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+
     p {
         width: fit-content;
     }
@@ -100,19 +107,24 @@ body {
                 }
 
                 li {
-                    color: var(--blanco);
+                    
                     cursor: pointer;
                     box-shadow: 0px 0px 10px #59e9e8;
-                    padding: 1em;
                     border-radius: 3em;
                     backdrop-filter: blur(10px);
                     text-align: center;
                     width: 100%;
                     transition: all .5s;
-
                     &:hover {
                         width: 130%;
                         box-shadow: 0px 0px 40px #59e9e8;
+                    }
+
+                    a {
+                        display: block;
+                        text-decoration: none;
+                        color: var(--blanco);
+                        padding: 1em;
                     }
                 }
             }
@@ -134,10 +146,14 @@ body {
                 align-items: center;
                 gap: 2em;
                 padding: 1em;
+                margin-block: 5em;
+            }
+
+            section:first-child {
+                margin: 0;
             }
     
             /* Seccion de nosotros */
-    
             .seccion-nosotros {
                 .contenedor {
                     display: flex;
@@ -201,7 +217,11 @@ body {
                         .contenedor-victor {
                             background-color: rgba(131, 229, 231, 0.7);
                         }
-                    }      
+                    }
+                    
+                    .img-perfil {
+                        border-radius: 2em;
+                    }
                 }
             }
     
@@ -302,11 +322,11 @@ body {
                 
                 .contenedor-general-clientes {
                     display: grid;
-                    grid-template-columns: repeat(1, 1fr);
-                    gap: 2em;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1em;
 
                     .contenedor-cliente {
-                        padding: 2em;
+                        padding: 1em;
                         backdrop-filter: blur(5px);
                         box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.2), -15px -15px 15px rgba(255, 255, 255, 0.2);
                         border-radius: 2em;
@@ -318,7 +338,7 @@ body {
 
                         span {
                             text-shadow: 0px 0px 10px white;
-                            font-size: 1.2rem;
+                            font-size: 1rem;
                         }
 
                     }
@@ -331,11 +351,11 @@ body {
 
                 .contenedor-general-blog {
                     display: grid;
-                    grid-template-columns: repeat(1, 1fr);
+                    grid-template-columns: repeat(2, 1fr);
                     gap: 2em;
 
                     .contenedor-blog {
-                        padding: 2em;
+                        padding: 1em;
                         backdrop-filter: blur(5px);
                         box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.2), -15px -15px 15px rgba(255, 255, 255, 0.2);
                         border-radius: 2em;
@@ -347,7 +367,7 @@ body {
 
                         span {
                             text-shadow: 0px 0px 10px white;
-                            font-size: 1.2rem;
+                            font-size: 1rem;
                         }
 
                     }
@@ -373,6 +393,7 @@ body {
                     .div-input {
                         display: flex;
                         flex-direction: column;
+                        width: 100%;
 
                         textarea {
                             resize: vertical;
@@ -393,6 +414,7 @@ body {
                         border-radius: 2em;
                         background-color: rgba(255, 255, 255, 0.5);
                         text-shadow: 0px 0px 5px white;
+                        width: 100%;
                     }
 
                     input[type="submit"]{
@@ -422,6 +444,13 @@ body {
 /* Responsive */
 @media screen and (min-width: 768px) {
     body {
+        h1 {
+            font-size: 2.5rem;
+        }
+        h2 {
+            font-size: 2rem;
+        }
+
         .contenedor-root {
             main {
                 section {
@@ -439,6 +468,57 @@ body {
                         }
                     }
                 }
+
+                .seccion-servicios {
+                    .tarjeta-principal {
+                        .div-descripciones {
+                            flex-direction: row;
+                        }
+                    }
+
+                    .div-lista-servicios {
+                        display: flex;
+                        flex-direction: row;
+                    }
+                }
+
+                .seccion-trabajos-clientes {
+                    .contenedor-general-clientes {
+                        grid-template-columns: repeat(4, 1fr)
+                    }
+                }
+
+                .seccion-blog {
+                    .contenedor-general-blog {
+                        grid-template-columns: repeat(4, 1fr);
+                    }
+                }
+
+                .seccion-contacto {
+                    form {
+                        width: 500px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        header {
+            position: relative;
+            display: flex;
+
+            nav {
+                display: flex;
+            }
+        }
+
+        .contenedor-root {
+            main {
+                max-width: 1024px;
+                margin: 0 auto;
             }
         }
     }

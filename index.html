@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <script defer src="scroll-suave.js"></script>
     <script defer src="index.js"></script>
     <title>KraatiVi</title>
 </head>
@@ -12,22 +13,22 @@
     <header>
         <nav>
             <ul>
-                <li data-li>Inicio</li>
-                <li data-li>Nosotros</li><!-- Texto introductorio, nuestros perfiles, porque elegirnos y experiencia -->
-                <li data-li>Servicios</li> 
-                <li data-li>Proyectos</li>
-                <li data-li>Blog</li>
-                <li data-li>Contacto</li>         
+                <li data-li><a href="#seccionInicio" data-enlace>Inicio</a></li>
+                <li data-li><a href="#seccionNosotros" data-enlace>Nosotros</a></li>
+                <li data-li><a href="#seccionServicios" data-enlace>Servicios</a></li>
+                <li data-li><a href="#seccionProyectos" data-enlace>Proyectos</a></li>
+                <li data-li><a href="#seccionBlog" data-enlace>Blog</a></li>
+                <li data-li><a href="#seccionContacto" data-enlace>Contacto</a></li>
             </ul>
         </nav>
     </header>
-    <div class="contenedor-root"> 
+    <div id="contenedorRoot" class="contenedor-root"> 
         <main>
-            <section>
+            <section id="seccionInicio">
                 <img src="Imagotipo.png" alt="">
                 <h1>Kraatividad que forja universos</h1>
             </section>
-            <section class="seccion-nosotros">
+            <section id="seccionNosotros" class="seccion-nosotros">
                 <h2>¡Constructores de mundos!</h2>
                 <div class="contenedor contenedor-general">
                     <p class="texto-general">¡Creemos que cada sueño, emprendimiento, negocio y empresa es un mundo único dentro de un universo gigantesco! Cada uno tiene sus propios desafíos y metas, brillando con una Kraatividad única que los hace destacar.</p>
@@ -41,7 +42,7 @@
                             <p class="nombre">Karen Méndez Muñoz</p>
                         </div>
                     </div>
-                    <img src="872f2b57-1e43-4ff3-9954-5bfae604bf05.jpg" alt="">
+                    <img class="img-perfil" src="872f2b57-1e43-4ff3-9954-5bfae604bf05.jpg" alt="">
                     <div class="contenedor-general-perfil">
                         <div class="contenedor-perfil contenedor-victor">
                             <p class="parrafo">¡Nos esperan muchos mundos y universos que forjar! ¡Estoy seguro que haremos muy buen equipo!</p>
@@ -53,7 +54,7 @@
                 
                 
             </section>
-            <section class="seccion-servicios">
+            <section id="seccionServicios" class="seccion-servicios">
                 <h2>¡Dale forma a tu mundo con nuestros servicios!</h2>
                 <div class="tarjeta-principal">
                     <p class="titulo">Identidad de marca</p>
@@ -77,7 +78,6 @@
                     <div class="div-imagen"><img src="Imagotipo.png" alt=""></div>
                     <div class="div-imagen"><img src="Imagotipo.png" alt=""></div>
                     <div class="div-imagen"><img src="Imagotipo.png" alt=""></div>
-                    <div class="div-imagen"><img src="Imagotipo.png" alt=""></div>
                 </div>
                 <!-- <p>Identidad de marca: Tu marca es un mundo que necesita mucho cariño. Por eso, un buen logo, un manual de identidad o un diseño personalizado, especial y Kraativo ¡no le vendría mal!</p>
                 <p>Marketing: Con KraatiVi, cada campaña digital es una obra maestra Kraativa forjada para capturar la atención de tu audiencia. ¡Haz que tu marca brille, destaca en el universo!</p>
@@ -87,7 +87,7 @@
                 <p>Animaciones: A veces, una imagen o un texto no bastan para expresar la grandeza de tu marca; pero una animación... ¡Oh, sí, claro que sí! ¡Hay que darle movimiento a esa gran idea!</p>
                 <p>Sonorización: Entendemos que los sonidos y la música pueden ser el alma de tu marca. Le ponemos ritmo y melodía a tus ideas. ¡Desde sonidos épicos hasta bandas sonoras inolvidables y canciones pegajosas! Haremos que tu marca suene tan bien que hasta tus clientes querrán ponerse a bailar. ¡Haz que el universo escuche tu esencia Kraativa!</p> -->
             </section>
-            <section class="seccion-trabajos-clientes">
+            <section id="seccionProyectos" class="seccion-trabajos-clientes">
                 <h2>Nuestros trabajos y clientes</h2>
                 <div class="contenedor-general-clientes">
                     <div class="contenedor-cliente">
@@ -140,7 +140,7 @@
                     </div>
                 </div>
             </section>
-            <section class="seccion-blog">
+            <section id="seccionBlog" class="seccion-blog">
                 <h2>Blog</h2>
                 <div class="contenedor-general-blog">
                     <div class="contenedor-blog">
@@ -161,9 +161,15 @@
                         <span>Fecha</span>
                         <span>Información</span>
                     </div>
+                    <div class="contenedor-blog">
+                        <img src="Imagotipo.png" alt="">
+                        <span>Titulo</span>
+                        <span>Fecha</span>
+                        <span>Información</span>
+                    </div>
                 </div>
             </section>
-            <section class="seccion-contacto">
+            <section id="seccionContacto" class="seccion-contacto">
                 <h2>Contacto</h2>
                 <form>
                     <div class="div-input">

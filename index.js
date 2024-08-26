@@ -19,3 +19,9 @@
 //         girando=false;
 //     },25);
 // });
+
+document.querySelectorAll('[data-enlace]').forEach(enlace=>{
+    enlace.addEventListener('click',e=>{
+        ScrollSuave(e, enlace.getAttribute('href'));
+    })
+})
