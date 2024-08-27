@@ -529,9 +529,33 @@ body {
         header {
             position: relative;
             display: flex;
+            width: 200px;
+            background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+
+            #btnMenu {
+                display: none;
+            }
 
             nav {
+                position: relative;
                 display: flex;
+                background-color: transparent;
+
+                ul {
+                    &:has(li a:hover) li a:not(a:hover) {
+                        opacity: .5;
+                    }
+
+                    li {
+                        a {
+                            transition: width .4s, box-shadow .4s, opacity .4s;
+                            &:hover {
+                                width: 130%;
+                                box-shadow: 0px 0px 40px #59e9e8;
+                            }
+                        }
+                    }
+                }
             }
         }
 
