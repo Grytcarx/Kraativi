@@ -20,8 +20,14 @@
 //     },25);
 // });
 
+btnMenu.addEventListener('click',()=>{
+    menuNavegacion.classList.toggle('on');
+    btnMenu.classList.toggle('on');
+});
+
 document.querySelectorAll('[data-enlace]').forEach(enlace=>{
     enlace.addEventListener('click',e=>{
+        menuNavegacion.classList.remove('on');
         ScrollSuave(e, enlace.getAttribute('href'));
     })
 })
