@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <link rel="shortcut icon" href="imagenes/icono.ico" type="image/x-icon">
-    <script defer src="scroll-suave.js"></script>
-    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="index.css?v=1">
+    <link rel="shortcut icon" href="imagenes/icono.ico?v=1" type="image/x-icon">
+    <script defer src="scroll-suave.js?v=1"></script>
+    <script defer src="index.js?v=1"></script>
     <title>KraatiVi</title>
 </head>
 <body>
@@ -17,9 +17,10 @@
             <ul>
                 <li data-li><a href="#seccionInicio" data-enlace>Inicio</a></li>
                 <li data-li><a href="#seccionNosotros" data-enlace>Nosotros</a></li>
+                <li data-li><a href="#seccionMisionVision" data-enlace>Misión y Visión</a></li>
                 <li data-li><a href="#seccionServicios" data-enlace>Servicios</a></li>
                 <li data-li><a href="#seccionProyectos" data-enlace>Proyectos</a></li>
-                <li data-li><a href="#seccionBlog" data-enlace>Blog</a></li>
+                <!-- <li data-li><a href="#seccionBlog" data-enlace>Blog</a></li> -->
                 <li data-li><a href="#seccionContacto" data-enlace>Contacto</a></li>
                 <li data-li><a href="https://www.youtube.com/@KraatiVi" target="_blank">Youtube</a></li>
             </ul>
@@ -28,7 +29,7 @@
     <div id="contenedorRoot" class="contenedor-root"> 
         <main>
             <section id="seccionInicio">
-                <img src="imagenes/Imagotipo.png" alt="">
+                <img src="imagenes/Imagotipo.png?v=1" alt="">
                 <h1>KraatiVidad que forja universos</h1>
             </section>
             <section id="seccionNosotros" class="seccion-nosotros">
@@ -39,30 +40,41 @@
                 </div>
                 <div class="contenedor contenedor-perfiles">
                     <div class="contenedor-general-perfil">
-                        <img src="imagenes/planeta.webp" alt="">
+                        <img class="estrellas-perfil" src="imagenes/estrellas.png?v=1" alt="">
                         <div class="contenedor-perfil contenedor-karen">
                             <p class="parrafo">¡Estoy lista para empezar una gran aventura KraatiVa contigo! ¡Anímate, esto será grandioso!</p>
                             <p class="nombre">Karen Méndez Muñoz</p>
                         </div>
                     </div>
-                    <img class="img-perfil" src="imagenes/ceos.jpg" alt="">
+                    <img class="img-perfil" src="imagenes/ceos.png?v=1" alt="">
                     <div class="contenedor-general-perfil">
                         <div class="contenedor-perfil contenedor-victor">
                             <p class="parrafo">¡Nos esperan muchos mundos y universos que forjar! ¡Estoy seguro que haremos muy buen equipo!</p>
                             <p class="nombre">Victor Osorio Parra</p>
                         </div>
-                        <img src="imagenes/planeta.webp" alt="">
+                        <img class="planeta" src="imagenes/planeta.png?v=1" alt="">
                     </div>
                 </div>
-                
-                
+            </section>
+            <section id="seccionMisionVision" class="seccion-mision-vision">
+                <h2>¡Nuestro mapa Kraativo!</h2>
+                <div class="mision-vision">
+                    <div class="contenido mision">
+                        <p class="titulo">Misión</p>
+                        <p class="parrafo">Nos comprometemos a potenciar la presencia en línea de nuestros clientes, ofreciendo soluciones creativas y efectivas a través de la creación de páginas web, logos y diseños, branding, marketing, publicidad, fotografía y edición, animación y sonorización. Nos esforzamos por crear experiencias digitales únicas y memorables que impulsen el éxito de sus negocios. Con un enfoque centrado en la innovación, la calidad y la satisfacción del cliente.</p>
+                    </div>
+                    <div class="contenido vision">
+                        <p class="titulo">Visión</p>
+                        <p class="parrafo">Nuestra visión es ser el puente entre la creatividad y la funcionalidad, donde cada página web, logos y diseños, branding, marketing, publicidad, fotografía y edición, animación y sonorización que creamos no solo sea estéticamente impactante, sino también estratégicamente eficiente. Nos comprometemos a ser líderes en innovación y calidad, brindando soluciones integrales que potencien la identidad y el éxito de nuestros clientes. Nos esforzamos por construir relaciones sólidas y duraderas, siendo reconocidos como el socio confiable y creativo que impulsa el crecimiento y la excelencia en cada proyecto.</p>
+                    </div>
+                </div>
             </section>
             <section id="seccionServicios" class="seccion-servicios">
                 <h2>¡Dale forma a tu mundo con nuestros servicios!</h2>
                 <div class="tarjeta-principal">
-                    <p class="titulo">Identidad de marca</p>
-                    <p class="parrafo">Tu marca es un mundo que necesita mucho cariño. Por eso, un buen logo, un manual de identidad o un diseño personalizado, especial y KraatiVo ¡no le vendría mal!</p>
-                    <div class="div-descripciones">
+                    <p id="tituloServicio" class="titulo">Identidad de marca</p>
+                    <p id="parraforServicio" class="parrafo">Tu marca es un mundo que necesita mucho cariño. Por eso, un buen logo, un manual de identidad o un diseño personalizado, especial y KraatiVo ¡no le vendría mal!</p>
+                    <div id="contenedorDetallesServicios" class="div-descripciones">
                         <div class="div-descripcion">
                             <p>Creación y rediseño de logo</p>
                         </div>
@@ -75,13 +87,13 @@
                     </div>
                 </div>
                 <div class="div-lista-servicios">
-                    <div class="div-imagen"><img src="icons/identidad.png" alt=""></div>
-                    <div class="div-imagen"><img src="icons/marketing.png" alt=""></div>
-                    <div class="div-imagen"><img src="icons/web.png" alt=""></div>
-                    <div class="div-imagen"><img src="icons/imagen.png" alt=""></div>
-                    <div class="div-imagen"><img src="icons/video.png" alt=""></div>
-                    <div class="div-imagen"><img src="icons/animacion.png" alt=""></div>
-                    <div class="div-imagen"><img src="icons/sonido.png" alt=""></div>
+                    <div class="div-imagen" data-btn-servicio="identidad"><img src="icons/identidad.png?v=1" alt=""></div>
+                    <div class="div-imagen" data-btn-servicio="marketing"><img src="icons/marketing.png?v=1" alt=""></div>
+                    <div class="div-imagen" data-btn-servicio="web"><img src="icons/web.png?v=1" alt=""></div>
+                    <div class="div-imagen" data-btn-servicio="imagen"><img src="icons/imagen.png?v=1" alt=""></div>
+                    <div class="div-imagen" data-btn-servicio="video"><img src="icons/video.png?v=1" alt=""></div>
+                    <div class="div-imagen" data-btn-servicio="animacion"><img src="icons/animacion.png?v=1" alt=""></div>
+                    <div class="div-imagen" data-btn-servicio="sonido"><img src="icons/sonido.png?v=1" alt=""></div>
                 </div>
                 <!-- <p>Identidad de marca: Tu marca es un mundo que necesita mucho cariño. Por eso, un buen logo, un manual de identidad o un diseño personalizado, especial y KraatiVo ¡no le vendría mal!</p>
                 <p>Marketing: Con KraatiVi, cada campaña digital es una obra maestra KraatiVa forjada para capturar la atención de tu audiencia. ¡Haz que tu marca brille, destaca en el universo!</p>
@@ -92,41 +104,41 @@
                 <p>Sonorización: Entendemos que los sonidos y la música pueden ser el alma de tu marca. Le ponemos ritmo y melodía a tus ideas. ¡Desde sonidos épicos hasta bandas sonoras inolvidables y canciones pegajosas! Haremos que tu marca suene tan bien que hasta tus clientes querrán ponerse a bailar. ¡Haz que el universo escuche tu esencia KraatiVa!</p> -->
             </section>
             <section id="seccionProyectos" class="seccion-trabajos-clientes">
-                <h2>Nuestros trabajos y clientes</h2>
+                <h2>¡Nuestras obras maestras!</h2>
                 <div class="contenedor-general-clientes">
                     <a href="https://rescatadosporsusangre.com/" target="_blank" class="contenedor-cliente">
-                        <img src="imagenes/rescatados.png" alt="">
+                        <img src="imagenes/rescatados.png?v=1" alt="">
                         <span class="titulo">Página web</span>
                         <span class="cliente">Fundación cristiana Rescatados por su sangre</span>
                         <span class="detalles">Creación de la página web oficial</span>
                     </a>
                     <a href="https://vimeo.com/948324984" target="_blank" class="contenedor-cliente">
-                        <img src="imagenes/animacion rescatados.png" alt="">
+                        <img src="imagenes/animacion rescatados.png?v=1" alt="">
                         <span class="titulo">Animación 2D</span>
                         <span class="cliente">Fundación cristiana Rescatados por su sangre</span>
                         <span class="detalles">Animación 2D que refleja el objetivo de la fundación</span>
                     </a>
                     <a href="https://internaltests.victorybam.com/" target="_blank" class="contenedor-cliente">
-                        <img src="imagenes/victorybam.png" alt="">
+                        <img src="imagenes/victorybam.png?v=1" alt="">
                         <span class="titulo">Página web</span>
                         <span class="cliente">BAM</span>
                         <span class="detalles">Creación de la página web oficial</span>
                     </a>
                     <a href="https://app.victorybam.com/" target="_blank" class="contenedor-cliente">
-                        <img src="imagenes/victorybamapp.png" alt="">
+                        <img src="imagenes/victorybamapp.png?v=1" alt="">
                         <span class="titulo">Página web</span>
                         <span class="cliente">BAM</span>
                         <span class="detalles">Creación de un sistema web interno</span>
                     </a>
                     <a href="https://vimeo.com/980818417" target="_blank" class="contenedor-cliente">
-                        <img src="imagenes/maquina garra.png" alt="">
+                        <img src="imagenes/maquina garra.png?v=1" alt="">
                         <span class="titulo">Animación 2D</span>
                         <span class="cliente">Vilmary Gonzalez</span>
                         <span class="detalles">Animación 2D publicitaria para su negocio</span>
                     </a>
                 </div>
             </section>
-            <section id="seccionBlog" class="seccion-blog">
+            <!-- <section id="seccionBlog" class="seccion-blog">
                 <h2>Blog</h2>
                 <div class="contenedor-general-blog">
                     <div class="contenedor-blog">
@@ -154,36 +166,26 @@
                         <span>Información</span>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <section id="seccionContacto" class="seccion-contacto">
-                <h2>Contacto</h2>
-                <form>
-                    <div class="div-input">
-                        <label for="">Nombre completo</label>
-                        <input type="text">
+                <h2>¡Estamos a un clic de hacer realidad tus ideas!</h2>
+                <div class="contenedor-general">
+                    <p>¡Escríbemos por WhatsApp!</p>
+                    <div class="contenedor-whatsapp">
+                        <a href="https://api.whatsapp.com/send?phone=573143428541" target="_blank" class="contacto-hombre">
+                            <span>Contacto 1</span>
+                            <img src="/icons/whatsapp_kraativi.svg?v=1" alt="" class="icono-whatsapp-kraativi">
+                        </a>
+                        <a href="https://api.whatsapp.com/send?phone=573218768200" target="_blank" class="contacto-mujer">
+                            <span>Contacto 2</span>
+                            <img src="/icons/whatsapp_kraativi.svg?v=1" alt="" class="icono-whatsapp-kraativi">
+                        </a>
                     </div>
-                    <div class="div-input">
-                        <label for="">Correo electrónico</label>
-                        <input type="text">
-                    </div>
-                    <div class="div-input">
-                        <label for="">Número celular</label>
-                        <input type="text">
-                    </div>
-                    <div class="div-input">
-                        <label for="">Asunto</label>
-                        <input type="text">
-                    </div>
-                    <div class="div-input">
-                        <label for="">Detalles</label>
-                        <textarea id=""></textarea>
-                    </div>
-                    <input type="submit" value="Enviar">
-                </form>
+                </div>
             </section>
         </main>
         <footer>
-
+            <p>© <span id="spanAnioActual">2024</span> KraatiVi. Todos los derechos reservados</p>
         </footer>
     </div>
 </body>

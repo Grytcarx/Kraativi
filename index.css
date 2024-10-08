@@ -8,12 +8,48 @@
 }
 
 @font-face {
-    font-family: 'segoescript';src: url('segoescript.ttf');
+    font-family: 'segoescript';src: url('segoescript.ttf?v=1');
     font-display: swap;
 }
 @font-face {
-    font-family: 'Poppins';src: url('Poppins-Regular.ttf');
+    font-family: 'Poppins';src: url('Poppins-Regular.ttf?v=1');
     font-display: swap;
+}
+
+@keyframes estrellas-perfil {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes planeta {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(20px);
+    }
+}
+
+@keyframes img-perfil {
+    from {
+       scale: 1;
+    }
+    to {
+        scale: 1.05;
+    }
+}
+
+@keyframes icono-whatsapp-kraativi {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: .7;
+    }
 }
 
 img {
@@ -41,7 +77,7 @@ body {
         position: fixed;
         top: 0;
         left: 0;
-        background-image: url(imagenes/background.png);
+        background-image: url(imagenes/background.png?v=1);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -214,8 +250,18 @@ body {
                         align-items: center;
     
                         img {
-                            width: 200px;
-                            height: 200px;
+                            opacity: .7;
+                            height: auto;
+                        }
+
+                        .estrellas-perfil {
+                            width: 150px;
+                            animation: estrellas-perfil 2s ease infinite alternate;
+                        }
+
+                        .planeta {
+                            width: 150px;
+                            animation: planeta 2s ease infinite alternate;
                         }
     
                         .contenedor-perfil {
@@ -245,8 +291,52 @@ body {
                     
                     .img-perfil {
                         border-radius: 2em;
+                        mask-image: linear-gradient(rgb(0 0 0 / 100%) 80%, transparent 100%);
+                        animation: img-perfil 3s ease infinite alternate;
                     }
                 }
+            }
+
+
+            /* Seccion de misión y visión */
+            .seccion-mision-vision {
+                .mision-vision {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1em;
+
+                    .contenido {
+                        padding: 2em;
+                        border-radius: 2em;
+                        backdrop-filter: blur(10px);
+
+                        p {
+                            color: white;
+                            text-shadow: 0px 0px 10px black;
+                        }
+    
+                        .titulo {
+                            font-size: 1.3rem;
+                            font-weight: bold;
+                            width: 100%;
+                        }
+                    }
+    
+                    .mision {
+                        background-color: rgba(69, 123, 123, 0.4);
+                        box-shadow: 0px 0px 10px 1px #59e9e8;
+                    }
+    
+                    .vision {
+                        background-color: rgba(106, 60, 117, 0.4);
+                        box-shadow: 0px 0px 10px 1px #e47ed1;
+
+                        .titulo {
+                            text-align: right;
+                        }
+                    }
+                }
+                
             }
     
     
@@ -261,8 +351,17 @@ body {
                     padding: 2em;
                     backdrop-filter: blur(5px);
                     box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.2),
-                    -15px -15px 15px rgba(255, 255, 255, 0.2);
+                    -15px -15px 15px rgba(255, 255, 255, 0.2),
+                    inset 0px 0px 0px 0px #59e9e8;
                     border-radius: 2em;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    transition: box-shadow .4s;
+
+                    &:hover {
+                        box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.2),
+                    -15px -15px 15px rgba(255, 255, 255, 0.2),
+                    inset 0px 0px 20px 1px #59e9e8;
+                    }
     
                     .titulo {
                         font-size: 1.3rem;
@@ -284,8 +383,16 @@ body {
                             align-items: center;
                             width: 150px;
                             height: 150px;
-                            background-color: rgba(255, 255, 255, 0.484);
+                            background-color: rgba(255, 255, 255, 0.7);
                             border-radius: 50%;
+                            padding: .5em;
+
+                            &:nth-child(2n + 1){
+                                box-shadow: 0px 0px 20px 1px #59e9e8;
+                            }
+                            &:nth-child(2n + 2){
+                                box-shadow: 0px 0px 20px 3px #ff9eed;
+                            }
     
                             p {
                                 text-align: center;
@@ -307,6 +414,12 @@ body {
                     gap: 1em;
                     padding: 1em;
                     justify-items: center;
+                    box-shadow: 0px 0px 20px 1px #59e9e8;
+                    transition: box-shadow .5s;
+
+                    &:hover {
+                        box-shadow: 0px 0px 40px 5px #ff9eed;
+                    }
 
                     &:has(.div-imagen:hover) .div-imagen:not(:hover) {
                         opacity: .5;
@@ -347,6 +460,13 @@ body {
                     grid-template-columns: repeat(1, 1fr);
                     gap: 2em;
 
+                    &:has(.contenedor-cliente:hover){
+                        .contenedor-cliente {
+                            scale: .9;
+                            opacity: .6;
+                        }
+                    }
+
                     .contenedor-cliente {
                         padding: 1em;
                         backdrop-filter: blur(5px);
@@ -359,10 +479,18 @@ body {
                         text-decoration: none;
                         gap: 1em;
                         background-color: rgba(255, 255, 255, 0.2);
-                        transition: scale .4s;
+                        transition: scale .4s, opacity .4s, box-shadow .4s;
+                        box-shadow: 0px 0px 20px 1px #ff9eed;
 
                         &:hover {
-                            scale: 1.05;
+                            scale: 1.05 !important;
+                            opacity: 1 !important;
+                            box-shadow: 0px 0px 20px 2px #59e9e8;
+                        }
+
+                        img {
+                            border-radius: 2em;
+                            opacity: 1;
                         }
 
                         span {
@@ -384,34 +512,6 @@ body {
                             font-size: 1rem;
                         }
 
-                    }
-                }
-
-            }
-
-            /* Seccion del blog */
-            .seccion-blog {
-
-                .contenedor-general-blog {
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: 2em;
-
-                    .contenedor-blog {
-                        padding: 1em;
-                        backdrop-filter: blur(5px);
-                        box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.2), -15px -15px 15px rgba(255, 255, 255, 0.2);
-                        border-radius: 2em;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        cursor: pointer;
-
-                        span {
-                            text-shadow: 0px 0px 10px white;
-                            font-size: 1rem;
-                        }
 
                     }
                 }
@@ -420,53 +520,85 @@ body {
 
             /* Seccion contacto */
             .seccion-contacto {
-
-                form {
+                .contenedor-general {
+                    background-color: rgba(0, 0, 0, 0.1);
+                    backdrop-filter: blur(5px);
+                    padding: 2em;
+                    border-radius: 2em;
                     display: flex;
                     flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 1em;
-                    backdrop-filter: blur(5px);
-                    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.2), -15px -15px 15px rgba(255, 255, 255, 0.2);
-                    border-radius: 2em;
-                    padding: 2em;
-                    width: 100%;
+                    gap: 2em;
+                    transition: box-shadow .4s;
+                    
+                    &:hover {
+                        box-shadow: 
+                            0px 0px 50px 2px #e47ed1,
+                            inset 0px 0px 20px 1px #59e9e8;
+                    }
 
-                    .div-input {
+                    p {
+                        font-size: 1.3rem;
+                        font-weight: bold;
+                        color: white;
+                        text-shadow: 0px 0px 10px black;
+                        text-align: center;
+                        width: 100%;
+                    }
+    
+                    .contenedor-whatsapp{
                         display: flex;
                         flex-direction: column;
-                        width: 100%;
-
-                        textarea {
-                            resize: vertical;
-                            min-height: 100px;
-                            max-height: 250px;
+                        gap: 1em;
+    
+                        a {
+                            background-color: transparent;
+                            backdrop-filter: blur(5px);
+                            text-decoration: none;
+                            font-size: 1.2rem;
+                            display: flex;
+                            gap: 1em;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 1em;
+                            border-radius: 2em;
+                            color: white;
+                            text-shadow: 0px 0px 10px black;
+                            transition: scale .4s;
+        
+                            &:hover {
+                                scale: 1.1;
+                            }
+        
+                            .icono-whatsapp-kraativi {
+                                width: 50px;
+                                height: 50px;
+                                animation: icono-whatsapp-kraativi 1s linear infinite alternate;
+                            }
+                        }
+        
+                        .contacto-hombre{
+                            background-color: rgba(131, 229, 231, 0.4);
+                            box-shadow: 0px 0px 10px 1px #59e9e8;
+                        }
+        
+                        .contacto-mujer {
+                            background-color: rgba(209, 119, 231, 0.4);
+                            box-shadow: 0px 0px 10px 1px #e47ed1;
                         }
                     }
-
-                    label {
-                        text-shadow: 0px 0px 5px white;
-                    }
-
-                    input,
-                    textarea {
-                        border: none;
-                        outline: none;
-                        padding: .6em;
-                        border-radius: 2em;
-                        background-color: rgba(255, 255, 255, 0.5);
-                        text-shadow: 0px 0px 5px white;
-                        width: 100%;
-                    }
-
-                    input[type="submit"]{
-                        cursor: pointer;
-                        font-size: 1.2rem;
-                    }
-
                 }
 
+            }
+        }
+
+        footer {
+            padding: 2em;
+            
+            p {
+                width: 100%;
+                text-align: center;
+                color: white;
+                text-shadow: 0px 0px 10px black;
             }
         }
     }
@@ -531,15 +663,12 @@ body {
                     }
                 }
 
-                .seccion-blog {
-                    .contenedor-general-blog {
-                        grid-template-columns: repeat(3, 1fr);
-                    }
-                }
-
                 .seccion-contacto {
-                    form {
-                        width: 500px;
+                    .contenedor-general {
+                        .contenedor-whatsapp{
+                            flex-direction: row;
+                            gap: 2em;
+                        }
                     }
                 }
             }
