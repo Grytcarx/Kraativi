@@ -103,6 +103,12 @@ function Init(){
 
     document.querySelectorAll('[data-btn-servicio]').forEach(boton=>{
         boton.addEventListener('click',()=>{
+            document.querySelectorAll('[data-btn-servicio]').forEach(boton2=>{
+                boton2.classList.remove('on');
+            });
+
+            boton.classList.add('on');
+
             const llave = boton.getAttribute('data-btn-servicio');
             const titulo = datosServicios[llave]['titulo'];
             const parrafo = datosServicios[llave]['parrafo'];
