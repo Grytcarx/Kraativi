@@ -8,11 +8,11 @@
 }
 
 @font-face {
-    font-family: 'segoescript';src: url('segoescript.ttf?v=2');
+    font-family: 'segoescript';src: url('segoescript.ttf?v=3');
     font-display: swap;
 }
 @font-face {
-    font-family: 'Poppins';src: url('Poppins-Regular.ttf?v=2');
+    font-family: 'Poppins';src: url('Poppins-Regular.ttf?v=3');
     font-display: swap;
 }
 
@@ -88,7 +88,7 @@ body {
         position: fixed;
         top: 0;
         left: 0;
-        background-image: url(imagenes/background.png?v=2);
+        background-image: url(imagenes/background.png?v=3);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -502,7 +502,6 @@ body {
                         border-radius: 2em;
                         display: flex;
                         flex-direction: column;
-                        justify-content: center;
                         cursor: pointer;
                         text-decoration: none;
                         gap: 1em;
@@ -519,6 +518,10 @@ body {
                         img {
                             border-radius: 2em;
                             opacity: 1;
+                            width: 100%;
+                            height: auto;
+                            aspect-ratio: 16/9;
+                            object-fit: cover;
                         }
 
                         span {
